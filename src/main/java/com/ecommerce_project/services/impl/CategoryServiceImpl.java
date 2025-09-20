@@ -9,6 +9,8 @@ import com.ecommerce_project.exceptions.ResourceNotFoundException;
 import com.ecommerce_project.models.Category;
 import com.ecommerce_project.repositories.CategoryRepository;
 import com.ecommerce_project.services.CategoryService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,13 +27,20 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public PaginatedCategoryResponseDTO getAllCategories() {
-        List<Category> categories = categoryRepository.findAll();
+    public PaginatedCategoryResponseDTO getAllCategories(Pageable pageable) {
+        Page<Category> categories = categoryRepository.findAll(pageable);
         List<CategoryResponseDTO> categoryResponseDTO = categories.stream()
                 .map(categoryMapper::toDTO)
                 .toList();
 
-        return new PaginatedCategoryResponseDTO(categoryResponseDTO);
+        return new PaginatedCategoryResponseDTO(
+                categoryResponseDTO,
+                categories.getNumber(),
+                categories.getSize(),
+                categories.getTotalElements(),
+                categories.getTotalPages(),
+                categories.isLast()
+        );
     }
 
     @Override
