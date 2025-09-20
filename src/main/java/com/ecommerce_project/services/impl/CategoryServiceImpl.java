@@ -45,7 +45,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryResponseDTO createCategory(CategoryRequestDTO categoryRequestDTO) {
-        if(isCategoryNameUnique(categoryRequestDTO.categoryName())) {
+        if(categoryNameExists(categoryRequestDTO.categoryName())) {
             throw new ApiException("Category already exists");
         }
 
@@ -58,7 +58,7 @@ public class CategoryServiceImpl implements CategoryService {
         Category category = categoryRepository.findById(categoryId)
                 .orElseThrow(() -> new ResourceNotFoundException("Category with id " + categoryId + " not found"));
 
-        if(isCategoryNameUnique(categoryRequestDTO.categoryName())) {
+        if(categoryNameExists(categoryRequestDTO.categoryName())) {
             throw new ApiException("Category already exists");
         }
 
@@ -74,7 +74,7 @@ public class CategoryServiceImpl implements CategoryService {
         categoryRepository.deleteById(categoryId);
     }
 
-    private Boolean isCategoryNameUnique(String categoryName) {
+    private Boolean categoryNameExists(String categoryName) {
         return categoryRepository.existsByCategoryName(categoryName);
     }
 }
