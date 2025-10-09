@@ -1,4 +1,4 @@
-package com.ecommerce_project.dtos;
+package com.ecommerce_project.dtos.category;
 
 import java.util.List;
 

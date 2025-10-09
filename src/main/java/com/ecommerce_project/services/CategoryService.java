@@ -1,8 +1,8 @@
 package com.ecommerce_project.services;
 
-import com.ecommerce_project.dtos.CategoryRequestDTO;
-import com.ecommerce_project.dtos.CategoryResponseDTO;
-import com.ecommerce_project.dtos.PaginatedCategoryResponseDTO;
+import com.ecommerce_project.dtos.category.CategoryRequestDTO;
+import com.ecommerce_project.dtos.category.CategoryResponseDTO;
+import com.ecommerce_project.dtos.category.PaginatedCategoryResponseDTO;
 import org.springframework.data.domain.Pageable;
 
 public interface CategoryService {

@@ -1,9 +1,9 @@
 package com.ecommerce_project.services.impl;
 
 import com.ecommerce_project.configs.CategoryMapper;
-import com.ecommerce_project.dtos.CategoryRequestDTO;
-import com.ecommerce_project.dtos.CategoryResponseDTO;
-import com.ecommerce_project.dtos.PaginatedCategoryResponseDTO;
+import com.ecommerce_project.dtos.category.CategoryRequestDTO;
+import com.ecommerce_project.dtos.category.CategoryResponseDTO;
+import com.ecommerce_project.dtos.category.PaginatedCategoryResponseDTO;
 import com.ecommerce_project.exceptions.ApiException;
 import com.ecommerce_project.exceptions.ResourceNotFoundException;
 import com.ecommerce_project.models.Category;

@@ -1,8 +1,8 @@
 package com.ecommerce_project.controllers;
 
-import com.ecommerce_project.dtos.CategoryRequestDTO;
-import com.ecommerce_project.dtos.CategoryResponseDTO;
-import com.ecommerce_project.dtos.PaginatedCategoryResponseDTO;
+import com.ecommerce_project.dtos.category.CategoryRequestDTO;
+import com.ecommerce_project.dtos.category.CategoryResponseDTO;
+import com.ecommerce_project.dtos.category.PaginatedCategoryResponseDTO;
 import com.ecommerce_project.services.CategoryService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Pageable;
