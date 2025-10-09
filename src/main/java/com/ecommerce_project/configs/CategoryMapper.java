@@ -1,7 +1,7 @@
 package com.ecommerce_project.configs;
 
-import com.ecommerce_project.dtos.CategoryRequestDTO;
-import com.ecommerce_project.dtos.CategoryResponseDTO;
+import com.ecommerce_project.dtos.category.CategoryRequestDTO;
+import com.ecommerce_project.dtos.category.CategoryResponseDTO;
 import com.ecommerce_project.models.Category;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
